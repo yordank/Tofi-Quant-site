@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tofu Quant Vault</title>
+<meta name="description" content="Tofu Quant — a quantitative trading vault on ApeX Omni. Live performance, TVL and how to join.">
+<meta property="og:title" content="Tofu Quant Vault">
+<meta property="og:description" content="Quantitative trading vault on ApeX Omni. See live performance and join.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2322c55e'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='%23051b0e' font-family='Arial' font-weight='700'>TQ</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="logo">TQ</span><span class="brand-name" data-vault-name>Tofu Quant</span></a>
+    <nav class="links">
+      <a href="#performance" data-i18n="navPerf">Performance</a>
+      <a href="#join" data-i18n="navJoin">How to join</a>
+      <a href="#faq" data-i18n="navFaq">FAQ</a>
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language">BG</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <p class="eyebrow"><span class="dot" id="statusDot"></span><span data-i18n="eyebrow">Live vault on ApeX Omni</span></p>
+    <h1><span data-vault-name>Tofu Quant</span> <span class="muted" data-i18n="vault">Vault</span></h1>
+    <p class="lead" data-i18n="lead">A systematic, rules-based trading strategy on ApeX Omni perpetuals. Deposit USDT into the vault, receive shares, and let the strategy trade for you — fully on-chain and withdrawable at any time.</p>
+    <div class="cta-row">
+      <a class="btn primary" data-vault-link target="_blank" rel="noopener" data-i18n="ctaJoin">Join the vault →</a>
+      <a class="btn ghost" href="#performance" data-i18n="ctaPerf">See performance</a>
+    </div>
+  </section>
+
+  <section class="wrap stats" aria-label="Key metrics">
+    <div class="stat"><span class="label" data-i18n="tvl">TVL</span><span class="value" id="sTvl">—</span></div>
+    <div class="stat"><span class="label" data-i18n="nav">Share price (NAV)</span><span class="value" id="sNav">—</span></div>
+    <div class="stat"><span class="label" data-i18n="ret">All-time return</span><span class="value" id="sRet">—</span></div>
+    <div class="stat"><span class="label" data-i18n="mdd">Max drawdown</span><span class="value" id="sMdd">—</span></div>
+    <div class="stat"><span class="label" data-i18n="depositors">Depositors</span><span class="value" id="sUsers">—</span></div>
+    <div class="stat"><span class="label" data-i18n="age">Running for</span><span class="value" id="sAge">—</span></div>
+  </section>
+
+  <section class="wrap card" id="performance">
+    <div class="card-head">
+      <h2 data-i18n="perfTitle">Share price history</h2>
+      <div class="seg" id="rangeSeg" role="tablist">
+        <button type="button" data-range="7" data-i18n="r7">7D</button>
+        <button type="button" data-range="30" data-i18n="r30">30D</button>
+        <button type="button" data-range="0" class="on" data-i18n="rAll">All</button>
+      </div>
+    </div>
+    <div class="chart" id="chart"><p class="muted center" data-i18n="loading">Loading live data…</p></div>
+    <div class="returns" id="returns"></div>
+    <p class="small muted"><span data-i18n="updated">Live data from ApeX Omni. Updated</span> <span id="updated">—</span>.</p>
+  </section>
+
+  <section class="wrap grid2">
+    <div class="card">
+      <h2 data-i18n="termsTitle">Vault terms</h2>
+      <dl class="terms">
+        <dt data-i18n="tProfit">Manager profit share</dt><dd id="tProfit">—</dd>
+        <dt data-i18n="tFee">Deposit fee</dt><dd id="tFee">—</dd>
+        <dt data-i18n="tAsset">Deposit asset</dt><dd>USDT</dd>
+        <dt data-i18n="tWithdraw">Withdrawals</dt><dd data-i18n="tWithdrawV">Anytime, by redeeming shares</dd>
+        <dt data-i18n="tAddr">Vault address</dt><dd><code id="tAddr">—</code></dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h2 data-i18n="whyTitle">Why this vault</h2>
+      <ul class="bullets">
+        <li data-i18n="why1">Systematic strategy — no emotional, discretionary trades.</li>
+        <li data-i18n="why2">Non-custodial: funds stay in the ApeX vault smart account, not with the manager.</li>
+        <li data-i18n="why3">Full transparency: every position, trade and NAV point is public on ApeX.</li>
+        <li data-i18n="why4">Manager only earns a share of profits — incentives aligned with depositors.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap card" id="join">
+    <h2 data-i18n="joinTitle">How to join in 4 steps</h2>
+    <ol class="steps">
+      <li><b data-i18n="s1t">Open the vault</b><span data-i18n="s1d">Tap “Join the vault” to open the vault page on ApeX Omni.</span></li>
+      <li><b data-i18n="s2t">Connect a wallet</b><span data-i18n="s2d">Connect MetaMask, OKX, Bybit or any supported wallet and create your ApeX Omni account.</span></li>
+      <li><b data-i18n="s3t">Deposit USDT</b><span data-i18n="s3d">Deposit USDT to your ApeX account from any supported chain.</span></li>
+      <li><b data-i18n="s4t">Buy vault shares</b><span data-i18n="s4d">On the vault page press “Deposit”, enter an amount and confirm. Your shares track the vault’s NAV.</span></li>
+    </ol>
+    <div class="cta-row"><a class="btn primary" data-vault-link target="_blank" rel="noopener" data-i18n="ctaJoin">Join the vault →</a></div>
+  </section>
+
+  <section class="wrap card" id="faq">
+    <h2 data-i18n="faqTitle">FAQ</h2>
+    <details><summary data-i18n="q1">Who holds my money?</summary><p data-i18n="a1">Your deposit sits in the vault account on ApeX Omni. The manager can trade with it but cannot withdraw it to their own wallet.</p></details>
+    <details><summary data-i18n="q2">How do I withdraw?</summary><p data-i18n="a2">On the vault page choose “Withdraw” and redeem your shares. The USDT value at the current NAV returns to your ApeX account.</p></details>
+    <details><summary data-i18n="q3">What does the manager earn?</summary><p data-i18n="a3">A percentage of the profit you make (shown under Vault terms). If you don’t profit, the manager earns nothing from you.</p></details>
+    <details><summary data-i18n="q4">Is there a minimum deposit?</summary><p data-i18n="a4">Minimums are set by ApeX and shown on the deposit screen of the vault page.</p></details>
+  </section>
+
+  <section class="wrap disclaimer">
+    <p data-i18n="risk">Risk warning: trading leveraged crypto derivatives is highly risky. The value of your shares can go down as well as up and you may lose some or all of your deposit. Past performance does not guarantee future results. Nothing on this site is financial advice.</p>
+  </section>
+</main>
+
+<footer class="wrap footer">
+  <span>© <span id="year"></span> <span data-vault-name>Tofu Quant</span></span>
+  <a data-vault-link target="_blank" rel="noopener">ApeX Omni</a>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
