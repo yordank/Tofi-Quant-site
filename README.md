@@ -1,6 +1,6 @@
-# Tofu Quant — vault website
+# Tofi Quant — vault website
 
-Static landing page for the Tofu Quant vault on ApeX Omni:
+Static landing page for the Tofi Quant vault on ApeX Omni:
 https://omni.apex.exchange/en-US/vault/info/2102639973684609024
 
 - Live TVL, share price (NAV), returns, max drawdown, depositors and a NAV chart,

@@ -1,4 +1,4 @@
-// Tofu Quant vault site — pulls live data from the public ApeX Omni API.
+// Tofi Quant vault site — pulls live data from the public ApeX Omni API.
 const VAULT_ID = "2102639973684609024";
 const API = "https://omni.apex.exchange/api/v3/vault";
 const VAULT_URL = "https://omni.apex.exchange/en-US/vault/info/" + VAULT_ID;
@@ -71,7 +71,7 @@ function age(ms) {
 
 function renderProfile() {
   const v = profile.vault;
-  document.querySelectorAll("[data-vault-name]").forEach((el) => (el.textContent = v.name || "Tofu Quant"));
+  document.querySelectorAll("[data-vault-name]").forEach((el) => (el.textContent = v.name || "Tofi Quant"));
   $("sTvl").textContent = usd(v.tvl);
   $("sNav").textContent = Number(profile.netValue).toFixed(4);
   const all = Number(profile.rateAll);
