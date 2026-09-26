@@ -1,7 +1,15 @@
 // Tofi Quant vault site — pulls live data from the public ApeX Omni API.
 const VAULT_ID = "2102639973684609024";
 const API = "https://omni.apex.exchange/api/v3/vault";
-const VAULT_URL = "https://omni.apex.exchange/en-US/vault/info/" + VAULT_ID;
+// ApeX uses different vault routes on desktop and mobile, and its desktop site
+// bounces phones to the mobile trade page — so link straight to the right one.
+// Same mobile check ApeX's own redirect uses.
+const IS_MOBILE = window.innerWidth < 1200 &&
+  (/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|iPad/i.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1));
+const VAULT_URL = IS_MOBILE
+  ? "https://m.omni.apex.exchange/en-US/vault/info/" + VAULT_ID
+  : "https://omni.apex.exchange/vaultInfo/" + VAULT_ID;
 const REFRESH_MS = 60_000;
 
 const I18N = {
